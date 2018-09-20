@@ -24,7 +24,7 @@ unless ['Friday', 'Saturday'].include? Date.today.strftime('%A')
   SLACK_WEBHOOK = ENV["SLACK_WEBHOOK"]
 
   #Available Categories = ["inspire", "management", "sports", "life", "funny", "love", "art"]
-  category = ENV["CATEGORY"] || "inspire"
+  category = ENV["CATEGORY"] || ["inspire", "management"].sample
   TSS_URL = "http://api.theysaidso.com/qod.json?category=#{category}"
 
   puts "Off to Work.."
